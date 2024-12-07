@@ -11,12 +11,13 @@ const deleteButton = document.querySelector(".deletePost");
 // В цю змінну записуються значення з поля вводу
 let newArray = [];
 
+
 // Змінна для вибору певного елементу з списку
 let selectSomeElement = false;
 
 
-// Функція для відображення контенту на сторінці
-function displayContentOnPage() {
+// Функція для відображення помилкового вводу даних на сторінці
+function displayWarningContentOnPage() {
     warningMessage.textContent = "Please enter a valid Name/Value Pair.";
     setTimeout(() => {
         warningMessage.textContent = "";
@@ -32,7 +33,7 @@ addContent.addEventListener("click", () => {
         if (item.length >= 1) {
             return item.trim();
         } else {
-            displayContentOnPage();
+            displayWarningContentOnPage();
         }
     });
 
@@ -41,19 +42,17 @@ addContent.addEventListener("click", () => {
         let isValidValue = true;
 
         for (const everySymbol of inputValue) {
-            if (
-                !(everySymbol.toUpperCase() !== everySymbol.toLowerCase()) &&
+            if (!(everySymbol.toUpperCase() !== everySymbol.toLowerCase()) &&
                 isNaN(Number(everySymbol)) &&
                 everySymbol !== "="
             ) {
                 isValidValue = false;
-                displayContentOnPage()
+                displayWarningContentOnPage()
                 break;
             }
         }
 
         if (isValidValue) {
-
             newArray.unshift(inputValue);
             showContent.textContent = "";
             const ulElements = document.createElement("ul");
@@ -66,12 +65,13 @@ addContent.addEventListener("click", () => {
                 showContent.appendChild(listOfItem);
             });
         } else {
-            displayContentOnPage()
+            displayWarningContentOnPage()
         }
     } else {
-        displayContentOnPage();
+        displayWarningContentOnPage();
     }
 });
+
 
 // Подія при кліку на кнопку в результаті чого ми сортуємо список елементів по імені
 sortByNameContent.addEventListener("click", () => {
@@ -91,6 +91,7 @@ sortByNameContent.addEventListener("click", () => {
     });
 });
 
+
 // Подія при кліку на кнопку в результаті чого ми сортуємо список елементів по значенні
 sortByValueContent.addEventListener("click", () => {
     const sortedArray = [...newArray].sort((a, b) => {
@@ -108,6 +109,7 @@ sortByValueContent.addEventListener("click", () => {
         ulElements.appendChild(listOfItem);
     });
 });
+
 
 // Подія при кліку на кнопку в результаті чого ми робимо на елемент списку добавлення класу
 showContent.addEventListener("click", (event) => {
@@ -127,7 +129,7 @@ deleteButton.addEventListener("click", () => {
         selectSomeElement.remove();
         selectSomeElement = false;
     } else {
-        displayContentOnPage()
+        displayWarningContentOnPage()
     }
 });
 
