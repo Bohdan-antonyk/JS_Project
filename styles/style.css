@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #5F92BD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    font-size: 24px;
+    padding-left: 8px;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 100%;
+}
+
+form {
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    padding: 50px;
+}
+
+input {
+    width: 100%;
+    max-width: 500px;
+    height: 30px;
+    font-size: 16px;
+    padding-left: 16px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 36px;
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+    color: gray;
+}
+
+.wrapper-content {
+    display: flex;
+    width: 100%;
+}
+
+.left-side-container {
+    width: 60%;
+}
+
+.description-content {
+    color: gray;
+    margin: 10px 0;
+}
+
+.displayForOutput {
+    height: 400px;
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid gray;
+    padding: 15px;
+    overflow: scroll;
+}
+
+.right-side-container {
+    position: relative;
+}
+
+.right-side-container .warning-message {
+    position: absolute;
+    width: 100%;
+    top: -10px;
+}
+
+.right-side-container button {
+    display: block;
+    height: 34px;
+    font-size: 20px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.right-side-container .warning-message {
+    position: absolute;
+    left: 40px;
+    font-size: 20px;
+    color: red;
+}
+
+.add {
+    margin: 38px 0 70px;
+    width: 100px;
+}
+
+.sortByName, .sortByValue {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.deletePost {
+    width: 100px;
+}
+
+.selectSomeElement {
+    background-color: cornflowerblue;
+}
+
+

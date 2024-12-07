@@ -1,0 +1,39 @@
+@media (max-width: 768px) {
+    body {
+        height: auto;
+    }
+
+    form {
+        padding: 25px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .wrapper-content {
+        flex-direction: column;
+    }
+
+    .left-side-container, .right-side-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .right-side-container button {
+        width: 80%;
+        margin: 10px;
+    }
+
+    .displayForOutput {
+        margin-bottom: 15px;
+    }
+
+    .right-side-container .warning-message {
+        text-align: center;
+        top: -15px;
+    }
+}
